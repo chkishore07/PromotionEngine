@@ -20,7 +20,10 @@ namespace PromotionEngine.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            List<HomeViewModel> homeViewModels = new List<HomeViewModel>();
+            homeViewModels.Add(new HomeViewModel { ProdName = "A", Quantity = 1 });
+            homeViewModels.Add(new HomeViewModel { ProdName = "B", Quantity = 2 });
+            return View(homeViewModels);
         }
 
         public IActionResult Privacy()

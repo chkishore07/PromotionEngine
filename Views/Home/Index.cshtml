@@ -1,8 +1,31 @@
-﻿@{
+﻿@using PromotionEngine.Models
+@model List<HomeViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Promotion Engine</p>
+    <br />
+    <br />
+    <br />
+
+    <table class="table-bordered">
+        <thead>
+            <tr class="d-table-row">
+                <td class="d-table-cell">Product</td>
+                <td class="d-table-cell">Quantity</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="d-table-row">
+                    <td class="d-table-cell">@item.ProdName</td>
+                    <td class="d-table-cell">@item.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
